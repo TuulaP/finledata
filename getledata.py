@@ -13,7 +13,7 @@ from shutil import copy2
 from urllib import urlopen
 
 url = "https://api.finna.fi/v1/search?lookfor="
-searchbase = "kolli"
+searchbase = "kissat"
 freepics = "&type=AllFields&field[]=id&field[]=subjects&field[]=images&filter[]=usage_rights_str_mv%3Ausage_B&sort=relevance%2Cid%20asc&page=1&limit=20&prettyPrint=false&lng=fi"
 
 picurl = url + searchbase + freepics
@@ -45,7 +45,7 @@ for resultSet in result:
         print "No pictures for: " + resultSet['id'] + " skipping to next record."
         continue
 
-    #skipping these images since require special handling.
+    #skipping these images since they seem to require special handling.
     if ("sls.SLSA" in picurl):
         continue
 
